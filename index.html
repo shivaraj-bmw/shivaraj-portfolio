@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Resume Shivaraj</title>
+
+<style>
+/* ===== CYBER BACKGROUND ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: radial-gradient(circle at top, #0a2a43, #000814);
+  overflow-x: hidden;
+}
+
+/* glowing grid effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+nav button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: rgba(0, 170, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    min-height: 100vh;
+    padding: 140px 20px 60px;
+    display: none;
+    animation: fade 0.5s ease-in-out;
+}
+
+section.active {
+    display: block;
+}
+
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== GLASS CARD ===== */
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,170,255,0.3);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 0 25px rgba(0,170,255,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0,170,255,0.4);
+}
+
+/* buttons */
+.nextBtn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+}
+.nextBtn:hover {
+    background: rgba(0,170,255,0.5);
+}
+
+.glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 170, 255, 0.2);
+  filter: blur(120px);
+  top: 20%;
+  left: 10%;
+  animation: move 6s infinite alternate;
+}
+
+.repo-card {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(0,170,255,0.3);
+  transition: 0.3s;
+}
+
+.repo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0,170,255,0.4);
+}
+
+.repo-card a {
+  color: cyan;
+  text-decoration: none;
+}
+
+a{
+    color:#00ffcc;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+a:hover{
+    color:#00aaff;
+    text-shadow:0 0 10px #00aaff;
+}
+
+.certificate-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+@keyframes move {
+  from { transform: translate(0,0); }
+  to { transform: translate(200px, 100px); }
+}
+
+/* profile image */
+.profile-img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+
+    border-radius:50%;
+    border:3px solid cyan;
+
+    margin-top:40px;
+
+    box-shadow:0 0 20px rgba(0,255,255,0.5);
+}
+#home .card:first-child{
+    margin-top:20px;
+}
+
+.cert-img{
+    width:100%;
+    max-width:800px;
+    height:auto;
+
+    border-radius:10px;
+
+    display:block;
+    margin:20px auto;
+
+    border:1px solid #00ffcc;
+    box-shadow:0 0 15px rgba(0,255,204,0.3);
+
+    transition:0.3s;
+}
+
+.cert-img:hover{
+    transform:scale(1.02);
+}
+
+.home-section{
+    padding-top:180px;
+}
+
+#home{
+    text-align:center;
+}
+
+#home .card{
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('about')">About</button>
+    <button onclick="show('skills')">Skills</button>
+    <button onclick="show('projects')">Projects</button>
+    <button onclick="show('contact')">Contact</button>
+</nav>
+<div class="glow"></div>
+<!-- HOME -->
+<section id="home" class="active home-section">
+
+<h1>👨‍💻 Portfolio Resume</h1>
+<h1 id="type"></h1>
+
+<div class="card">
+
+    <img src="Profile/ProfileImg.jpg"
+         alt="profile"
+         class="profile-img">
+
+    <h2>Shivaraj</h2>
+
+    <p>
+        CSE 3rd Year (Pursuing)<br>
+        Sardar Raja College of Engineering
+    </p>
+
+    <p>
+        🛡 Cybersecurity Enthusiast |
+        💻 Developer |
+        🌐 Networking Learner
+    </p>
+
+</div>
+
+<!-- remaining home content -->
+
+<button class="nextBtn" onclick="show('about')">
+    Next ➜ About Me
+</button>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+```
+<h1>👨‍💻 About Me</h1>
+
+<div class="card">
+
+    <h3>🎯 Introduction</h3>
+
+    <p>
+        Passionate Cybersecurity learner and developer with a strong interest
+        in Ethical Hacking, Networking, and AI-powered technologies.
+        Currently focused on building practical projects and expanding
+        knowledge in cybersecurity and software development.
+    </p>
+
+    <hr>
+
+    <h3>🎓 Education</h3>
+
+    <p>
+        3rd Year Computer Science and Engineering Student (Pursuing)
+        at Sardar Raja College of Engineering.
+    </p>
+
+    <hr>
+
+    <h3>📜 Certifications</h3>
+
+    <p>✔ Cisco Python Essentials 1</p>
+    <p>✔ Cisco Python Essentials 2</p>
+    <p>✔ Cisco Introduction to Cybersecurity</p>
+    <p>✔ Cisco Networking Basics</p>
+    <p>✔ HP LIFE Cybersecurity Awareness</p>
+    <p>✔ CAPPRICIOSEC University Ethical Hacking</p>
+    <p>✔ CADD Centre Full Stack Development Internship</p>
+
+    <hr>
+
+    <h3>💡 Areas of Interest</h3>
+
+    <p>🛡 Cybersecurity</p>
+    <p>🌐 Networking</p>
+    <p>🔐 Ethical Hacking</p>
+    <p>🤖 Artificial Intelligence</p>
+    <p>💻 Software Development</p>
+
+    <hr>
+
+    <h3>🚀 Current Projects & Goals</h3>
+
+    <p>
+        Developing "Shadow Editor", a Flutter-based image editing application
+        with future AI-powered editing capabilities.
+    </p>
+
+    <p>
+        Continuously improving programming, networking, and cybersecurity
+        skills through certifications, projects, and hands-on learning.
+    </p>
+
+</div>
+
+<button class="nextBtn" onclick="show('skills')">
+    Next ➜ Skills
+</button>
+```
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+    <h1>Skills & Certifications</h1>
+
+    <div class="card">
+        <p>🐍 Python (Basic)</p>
+        <p>💻 C Programming</p>
+        <p>☕ Java Basics</p>
+        <p>🌐 HTML</p>
+        <p>🛡 Ethical Hacking Basics</p>
+        <p>🌍 Networking Basics</p>
+        <p>🗣 Communication & Situation Handling</p>
+        <p>🛡 Introduction to Cyber Security</p>
+    </div>
+
+    <div class="card">
+    <h3>📜 Cisco Python Essentials 1</h3>
+    <img src="certificates/python-essentials.jpg" class="cert-img">
+</div>
+
+<div class="card">
+    <h3>📜 Cybersecurity & Ethical Hacking</h3>
+    <img src="certificates/ethical-hacking.jpg" class="cert-img">
+</div>
+
+<div class="card">
+    <h3>📜 Networking Basics</h3>
+    <img src="certificates/networking-basics.jpg" class="cert-img">
+</div>
+
+<div class="card">
+    <h3>📜 HP LIFE Cybersecurity Awareness</h3>
+    <img src="certificates/hp-life-cybersecurity.jpg" class="cert-img">
+</div>
+
+<div class="card">
+    <h3>📜 Full Stack Development Internship</h3>
+    <img src="certificates/fullstack-internship.jpg" class="cert-img">
+</div>
+
+<div class="card">
+    <h3>📜 Cisco Introduction to Cyber Security</h3>
+    <img src="certificates/Introduction to Cyber Security.jpg" class="cert-img">
+</div>
+
+    <button class="nextBtn" onclick="show('projects')">Next ➜ Projects</button>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h1>🚀 Projects Portfolio</h1>
+
+  <!-- Shadow Editor -->
+  <div class="card">
+    <h3>🖼 Shadow Editor (Flagship Project)</h3>
+    <p>
+      A Flutter-based image editing application currently under development.
+      Supports image importing, editing tools, layer management, screenshot export,
+      and future AI-powered editing features.
+    </p>
+
+    <ul>
+      <li>✅ Flutter Development</li>
+      <li>✅ Layer System</li>
+      <li>✅ Image Editing Tools</li>
+      <li>✅ Save & Export Features</li>
+      <li>🚀 AI Features (Coming Soon)</li>
+    </ul>
+  </div>
+
+  <!-- Number Guessing Game -->
+  <div class="card">
+    <h3>🎮 Number Guessing Game</h3>
+    <p>
+      Python-based console game where users guess a randomly generated number.
+      Demonstrates loops, conditions, user input handling, and game logic.
+    </p>
+  </div>
+
+  <!-- Python Calculator -->
+  <div class="card">
+    <h3>🧮 Python Calculator</h3>
+    <p>
+      A calculator application developed using Python that performs basic
+      arithmetic operations and demonstrates function-based programming.
+    </p>
+  </div>
+
+  <!-- Password Generator -->
+  <div class="card">
+    <h3>🔐 Password Generator</h3>
+    <p>
+      Generates secure and random passwords using Python.
+      Focuses on cybersecurity fundamentals and password security practices.
+    </p>
+  </div>
+
+  <!-- Student Record System -->
+  <div class="card">
+    <h3>📚 Student Record System</h3>
+    <p>
+      A Python project used to manage student information such as names,
+      marks, and records using structured programming concepts.
+    </p>
+  </div>
+
+  <!-- GitHub Dashboard -->
+  <div class="card">
+    <h3>🌐 GitHub Project Dashboard</h3>
+    <p>
+      Automatically loads and displays all repositories from GitHub using API integration.
+      New repositories appear automatically without updating the portfolio manually.
+    </p>
+
+    <div id="repo-list"></div>
+  </div>
+
+  <button class="nextBtn" onclick="show('contact')">
+    Next ➜ Contact
+  </button>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h1>Contact</h1>
+
+    <div class="card">
+    <p>
+    📧 Email:
+    <a href="mailto:shrshivaraj34@gmail.com">
+        shrshivaraj34@gmail.com
+    </a>
+</p>
+
+    <p>
+    📱 Phone:
+    <a href="tel:+916382685339">
+        +91 6382685339
+    </a>
+</p>
+
+    <p>
+        🐙 GitHub:
+        <a href="https://github.com/shivaraj-bmw"
+           target="_blank">
+           github.com/shivaraj-bmw
+        </a>
+    </p>
+
+    <p>
+        💼 LinkedIn:
+        <a href="https://www.linkedin.com/in/shivarajbmws1000rr"
+           target="_blank">
+           linkedin.com/in/shivarajbmws1000rr
+        </a>
+    </p>
+</div>
+
+    <button class="nextBtn" onclick="show('home')">⬅ Back to Home</button>
+</section>
+
+<!-- SCRIPT -->
+<script>
+function show(id) {
+    document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
+}
+</script>
+
+<script>
+let text = "Cybersecurity Portfolio";
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    document.getElementById("type").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 80);
+  }
+}
+type();
+</script>
+
+<script>
+const username = "shivaraj-bmw";
+
+async function loadRepos() {
+
+  const res = await fetch(
+    `https://api.github.com/users/${username}/repos`
+  );
+
+  const repos = await res.json();
+
+  const container =
+    document.getElementById("repo-list");
+
+  container.innerHTML = "";
+
+  repos.forEach(repo => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "repo-card";
+
+    div.innerHTML = `
+      <h3>📦 ${repo.name}</h3>
+      <p>${repo.description || "No description"}</p>
+      <a href="${repo.html_url}" target="_blank">
+        🔗 View Project
+      </a>
+    `;
+
+    container.appendChild(div);
+
+  });
+
+}
+
+loadRepos();
+</script>
+
+</body>
+</html>
