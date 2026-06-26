@@ -69,6 +69,28 @@ section.active {
     display: block;
 }
 
+#contact img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+}
+
+.github-stats {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.github-stats img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
 
 @keyframes fade {
     from {opacity: 0; transform: translateY(10px);}
@@ -147,10 +169,221 @@ a:hover{
     text-shadow:0 0 10px #00aaff;
 }
 
-.certificate-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+.cert-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.cert-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.cert-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cert-container .card {
+  min-width: 300px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-btn.left { left: -10px; }
+.scroll-btn.right { right: -10px; }
+
+.project-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 15px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.project-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.project-scroll img {
+  min-width: 280px;
+  height: 450px;        /* 🔥 height increase for mobile screenshot feel */
+  object-fit: contain;  /* ⭐ FULL image show */
+  background: rgba(0,0,0,0.2);
+
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,204,0.4);
+  box-shadow: 0 0 15px rgba(0,255,204,0.2);
+
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-scroll img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+
+  .card {
+    padding: 15px;
+  }
+
+  .cert-container .card {
+    min-width: 250px;
+  }
+
+  .project-scroll img {
+    min-width: 220px;
+    height: 380px;
+  }
+
+  nav button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
+
+section {
+  min-height: 100vh;
+  padding: 140px 20px 60px;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav button.active {
+  background: rgba(0,170,255,0.5);
+  box-shadow: 0 0 15px rgba(0,170,255,0.6);
+  transform: scale(1.05);
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s forwards;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.glitch {
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00aaff;
+  animation: glowText 2s infinite alternate;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tags span {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: rgba(0,255,204,0.1);
+  border: 1px solid rgba(0,255,204,0.4);
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.tags span:hover {
+  transform: scale(1.1);
+  background: rgba(0,170,255,0.3);
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 25px #00aaff; }
+}
+
+.typing {
+  font-size: 18px;
+  color: #00ffcc;
+}
+
+.hire-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #00ffcc, #00aaff);
+  color: black;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,255,204,0.5);
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.hire-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+
+  nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  nav button {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes move {
@@ -214,6 +447,8 @@ a:hover{
 
 <body>
 
+    <canvas id="particles"></canvas>
+
 <!-- NAV -->
 <nav>
     <button onclick="show('home')">Home</button>
@@ -226,7 +461,8 @@ a:hover{
 <!-- HOME -->
 <section id="home" class="active home-section">
 
-<h1 id="type"></h1>
+<h1 class="glitch">👨‍💻 Portfolio Resume</h1>
+<h1 id="type" class="typing"></h1>
 
 <div class="card">
 
@@ -338,6 +574,14 @@ Currently developing Shadow Editor, an advanced Flutter-based image editing appl
 <section id="skills">
     <h1>Skills & Certifications</h1>
 
+    <div class="tags">
+  <span>Python</span>
+  <span>Cybersecurity</span>
+  <span>Networking</span>
+  <span>Java</span>
+  <span>Flutter</span>
+</div>
+
     <div class="card">
         <p>🐍 Python (Basic)</p>
         <p>💻 C Programming</p>
@@ -349,40 +593,61 @@ Currently developing Shadow Editor, an advanced Flutter-based image editing appl
         <p>🛡 Introduction to Cyber Security</p>
     </div>
 
+    <!-- 🔥 CERTIFICATE CAROUSEL START -->
+<div class="cert-wrapper">
+
+  <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+  <div class="cert-container">
+
     <div class="card">
-    <h3>📜 Cisco Python Essentials 1</h3>
-    <img src="certificates/python-essentials.jpg" class="cert-img">
-</div>
+      <h3>📜 Cisco Python Essentials 1</h3>
+      <img src="certificates/python-essentials.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 Cybersecurity & Ethical Hacking</h3>
-    <img src="certificates/ethical-hacking.jpg" class="cert-img">
-</div>
+    <div class="card">
+      <h3>📜 Cybersecurity & Ethical Hacking</h3>
+      <img src="certificates/ethical-hacking.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 Networking Basics</h3>
-    <img src="certificates/networking-basics.jpg" class="cert-img">
-</div>
+    <div class="card">
+      <h3>📜 Networking Basics</h3>
+      <img src="certificates/networking-basics.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 HP LIFE Cybersecurity Awareness</h3>
-    <img src="certificates/hp-life-cybersecurity.jpg" class="cert-img">
-</div>
+    <div class="card">
+      <h3>📜 HP LIFE Cybersecurity Awareness</h3>
+      <img src="certificates/hp-life-cybersecurity.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 Java Programming for Beginners</h3>
-    <img src="certificates/java-beginners.jpg" class="cert-img">
-</div>
+    <div class="card">
+      <h3>📜 Java Programming for Beginners</h3>
+      <img src="certificates/java-beginners.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 Full Stack Development Internship</h3>
-    <img src="certificates/fullstack-internship.jpg" class="cert-img">
-</div>
+    <div class="card">
+      <h3>📜 Full Stack Development Internship</h3>
+      <img src="certificates/fullstack-internship.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-<div class="card">
-    <h3>📜 Cisco Introduction to Cyber Security</h3>
-    <img src="certificates/Introduction to Cyber Security.jpg" class="cert-img">
+    <div class="card">
+      <h3>📜 Introduction to Cybersecurity</h3>
+      <img src="certificates/Introduction to Cyber Security.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+
 </div>
+<!-- 🔥 CERTIFICATE CAROUSEL END -->
 
     <button class="nextBtn" onclick="show('projects')">Next ➜ Projects</button>
 </section>
@@ -432,11 +697,15 @@ Technologies Used: Flutter, Dart, ONNX Runtime, AI Models, Image Processing, Ges
       <li>🚀 AI Features (Coming Soon)</li>
     </ul>
 
-    <h3>📸 App Screenshots</h3>
+<h3>📸 App Screenshots</h3>
 
-<img src="screenshots/home.jpg" class="cert-img">
-<img src="screenshots/editor.jpg" class="cert-img">
-<img src="screenshots/layers.jpg" class="cert-img">
+<div class="project-scroll">
+
+  <img src="screenshots/home.jpg" onclick="openModal(this.src)">
+  <img src="screenshots/editor.jpg" onclick="openModal(this.src)">
+  <img src="screenshots/layers.jpg" onclick="openModal(this.src)">
+
+</div>
 
     <a href="https://github.com/shivaraj-bmw/shadow-editor" target="_blank">
   <button class="nextBtn">
@@ -560,16 +829,13 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
   <p>Last Updated: June 2026</p>
 </div>
 
-<div class="card">
-<h3>📊 GitHub Statistics</h3>
+<div class="github-stats">
 
-<img
-src="https://github-readme-stats.vercel.app/api?username=shivaraj-bmw&show_icons=true&theme=tokyonight">
+  <h3>📊 GitHub Statistics</h3>
 
-<br><br>
+  <img src="https://github-readme-stats.vercel.app/api?username=shivaraj-bmw&show_icons=true&theme=tokyonight">
 
-<img
-src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivaraj-bmw&layout=compact&theme=tokyonight">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivaraj-bmw&layout=compact&theme=tokyonight">
 
 </div>
 
@@ -582,13 +848,19 @@ function show(id) {
     document.querySelectorAll("section").forEach(sec => {
         sec.classList.remove("active");
     });
+
     document.getElementById(id).classList.add("active");
+
+    // navbar active state
+    document.querySelectorAll("nav button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
 }
 </script>
 
 <script>
-let text = "👨‍💻 Portfolio Resume";
-let i = 0;
 
 function type() {
   if (i < text.length) {
@@ -639,6 +911,83 @@ async function loadRepos() {
 
 loadRepos();
 </script>
+<script>
+let certContainer;
 
+window.addEventListener("load", () => {
+  certContainer = document.querySelector(".cert-container");
+});
+
+function scrollLeft() {
+  certContainer.scrollBy({ left: -320, behavior: "smooth" });
+}
+
+function scrollRight() {
+  certContainer.scrollBy({ left: 320, behavior: "smooth" });
+}
+
+/* modal */
+function openModal(src) {
+  let modal = document.createElement("div");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.background = "rgba(0,0,0,0.9)";
+  modal.style.display = "flex";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
+  modal.style.zIndex = "9999";
+
+  modal.innerHTML = `<img src="${src}" style="max-width:90%;max-height:90%;border-radius:10px;">`;
+
+  modal.onclick = () => modal.remove();
+
+  document.body.appendChild(modal);
+}
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2,
+    dx: (Math.random() - 0.5) * 1,
+    dy: (Math.random() - 0.5) * 1
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "rgba(0,255,204,0.5)";
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+<a href="#contact" class="hire-btn">Hire Me 🚀</a>
 </body>
 </html>
