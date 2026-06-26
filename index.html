@@ -178,19 +178,53 @@ a:hover{
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  padding: 30px 20px;
   scroll-snap-type: x mandatory;
-  padding: 20px;
   scroll-behavior: smooth;
+
+  /* center alignment */
+  align-items: center;
 }
 
 .cert-container::-webkit-scrollbar {
   display: none;
 }
 
+/* cards */
 .cert-container .card {
-  min-width: 300px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+  flex: 0 0 70%;
+  max-width: 420px;
+
+  scroll-snap-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+
+  transform: scale(0.85);
+  opacity: 0.5;
+}
+
+.cert-container {
+  justify-content: flex-start;
+  align-items: center;
+  scroll-padding: 50%;
+}
+
+.cert-container .card {
+  transform: scale(0.85);
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.cert-container .card.active {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.cert-container .card.active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+  border: 1px solid rgba(0,255,204,0.6);
 }
 
 .scroll-btn {
@@ -249,8 +283,32 @@ a:hover{
   }
 
   .cert-container .card {
-    min-width: 250px;
+  min-width: 260px;
+  max-width: 260px;
+}
+
+@media (max-width: 600px) {
+
+  .cert-container .card {
+    min-width: 85%;
+    max-width: 85%;
   }
+
+  .cert-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cert-container {
+    padding: 10px;
+    gap: 12px;
+  }
+}
+
+.cert-container {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 20px;
+}
 
   .project-scroll img {
     min-width: 220px;
@@ -986,6 +1044,30 @@ function animate() {
 }
 
 animate();
+
+const container = document.querySelector(".cert-container");
+const cards = document.querySelectorAll(".cert-container .card");
+
+function updateActiveCard() {
+  let center = container.scrollLeft + container.offsetWidth / 2;
+
+  cards.forEach(card => {
+    let cardCenter = card.offsetLeft + card.offsetWidth / 2;
+
+    let distance = Math.abs(center - cardCenter);
+
+    if (distance < card.offsetWidth / 2) {
+      card.classList.add("active");
+    } else {
+      card.classList.remove("active");
+    }
+  });
+}
+
+container.addEventListener("scroll", updateActiveCard);
+
+// initial run
+window.addEventListener("load", updateActiveCard);
 </script>
 
 <a href="#contact" class="hire-btn">Hire Me 🚀</a>
