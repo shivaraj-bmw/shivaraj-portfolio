@@ -416,6 +416,28 @@ nav button.active {
   transform: scale(1.1);
 }
 
+.modal{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+}
+
+.modal-content{
+  background:rgba(20,20,20,0.95);
+  border:1px solid cyan;
+  border-radius:15px;
+  max-width:400px;
+  margin:120px auto;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 0 25px rgba(0,255,255,0.4);
+}
+
 @media (max-width: 600px) {
 
   nav {
@@ -659,8 +681,26 @@ Currently developing Shadow Editor, an advanced Flutter-based image editing appl
   <div class="cert-container">
 
     <div class="card">
+      <h3>📜 AI Fundamentals</h3>
+      <img src="certificates/ai-fundamentals.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <h3>📜 Full Stack Development Internship</h3>
+      <img src="certificates/fullstack-internship.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
       <h3>📜 Cisco Python Essentials 1</h3>
       <img src="certificates/python-essentials.jpg" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <h3>📜 Java Programming for Beginners</h3>
+      <img src="certificates/java-beginners.jpg" class="cert-img"
            onclick="openModal(this.src)">
     </div>
 
@@ -679,18 +719,6 @@ Currently developing Shadow Editor, an advanced Flutter-based image editing appl
     <div class="card">
       <h3>📜 HP LIFE Cybersecurity Awareness</h3>
       <img src="certificates/hp-life-cybersecurity.jpg" class="cert-img"
-           onclick="openModal(this.src)">
-    </div>
-
-    <div class="card">
-      <h3>📜 Java Programming for Beginners</h3>
-      <img src="certificates/java-beginners.jpg" class="cert-img"
-           onclick="openModal(this.src)">
-    </div>
-
-    <div class="card">
-      <h3>📜 Full Stack Development Internship</h3>
-      <img src="certificates/fullstack-internship.jpg" class="cert-img"
            onclick="openModal(this.src)">
     </div>
 
@@ -762,6 +790,8 @@ Technologies Used: Flutter, Dart, ONNX Runtime, AI Models, Image Processing, Ges
   <img src="screenshots/home.jpg" onclick="openModal(this.src)">
   <img src="screenshots/editor.jpg" onclick="openModal(this.src)">
   <img src="screenshots/layers.jpg" onclick="openModal(this.src)">
+  <img src="screenshots/ai-sticker.jpg" onclick="openModal(this.src)">
+  <img src="screenshots/ai-image.jpg" onclick="openModal(this.src)">
 
 </div>
 
@@ -1070,6 +1100,63 @@ container.addEventListener("scroll", updateActiveCard);
 window.addEventListener("load", updateActiveCard);
 </script>
 
-<a href="#contact" class="hire-btn">Hire Me 🚀</a>
+<script>
+
+function openHireModal(){
+  document.getElementById("hireModal").style.display="block";
+}
+
+function closeHireModal(){
+  document.getElementById("hireModal").style.display="none";
+}
+
+</script>
+
+<button class="nextBtn" onclick="openHireModal()">
+    💼 Hire Me
+</button>
+
+<div id="hireModal" class="modal">
+
+  <div class="modal-content">
+
+    <h2>💼 Hire Me</h2>
+
+    <p>Choose an option below</p>
+
+    <a href="resume.pdf" download>
+      <button class="nextBtn">
+        📄 Download Resume
+      </button>
+    </a>
+
+    <br><br>
+
+    <a href="tel:+916382685339">
+      <button class="nextBtn">
+        📞 Call Shivaraj
+      </button>
+    </a>
+
+    <br><br>
+
+    <a href="https://www.linkedin.com/in/shivarajbmws1000rr"
+       target="_blank">
+      <button class="nextBtn">
+        💼 LinkedIn Profile
+      </button>
+    </a>
+
+    <br><br>
+
+    <button class="nextBtn"
+            onclick="closeHireModal()">
+      ❌ Close
+    </button>
+
+  </div>
+
+</div>
+
 </body>
 </html>
