@@ -53,7 +53,7 @@ nav button {
 }
 
 nav button:hover {
-    background: rgba(170, 0, 255, 0.45);
+    background: rgba(0, 170, 255, 0.4);
     transform: scale(1.05);
 }
 
@@ -101,17 +101,17 @@ section.active {
 .card {
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(170,0,255,0.35);
+  border: 1px solid rgba(0,170,255,0.3);
   padding: 20px;
   border-radius: 15px;
   margin: 15px 0;
-  box-shadow: 0 0 25px rgba(170,0,255,0.3);
+  box-shadow: 0 0 25px rgba(0,170,255,0.2);
   transition: 0.3s;
 }
 
 .card:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 40px rgba(170,0,255,0.55);
+  box-shadow: 0 0 40px rgba(0,170,255,0.4);
 }
 
 /* buttons */
@@ -125,14 +125,14 @@ section.active {
     cursor: pointer;
 }
 .nextBtn:hover {
-    background: rgba(170,0,255,0.55);
+    background: rgba(0,170,255,0.5);
 }
 
 .glow {
   position: fixed;
   width: 300px;
   height: 300px;
-  background: rgba(170, 0, 255, 0.22);
+  background: rgba(0, 170, 255, 0.2);
   filter: blur(120px);
   top: 20%;
   left: 10%;
@@ -159,14 +159,14 @@ section.active {
 }
 
 a{
-    color:#d28cff;
+    color:#00ffcc;
     text-decoration:none;
     transition:0.3s;
 }
 
 a:hover{
-    color:#bb66ff;
-    text-shadow:0 0 10px #bb66ff;
+    color:#00aaff;
+    text-shadow:0 0 10px #00aaff;
 }
 
 .cert-wrapper {
@@ -341,8 +341,8 @@ section.active {
 }
 
 nav button.active {
-  background: rgba(170,0,255,0.45);
-  box-shadow: 0 0 15px rgba(170,0,255,0.7);
+  background: rgba(0,170,255,0.5);
+  box-shadow: 0 0 15px rgba(0,170,255,0.6);
   transform: scale(1.05);
 }
 
@@ -362,7 +362,7 @@ nav button.active {
 }
 
 .glitch {
-  text-shadow:0 0 10px #c266ff,0 0 25px #8a2be2;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00aaff;
   animation: glowText 2s infinite alternate;
 }
 
@@ -388,20 +388,20 @@ nav button.active {
 }
 
 @keyframes glowText {
-  from { text-shadow:0 0 10px #bb66ff; }
-  to { text-shadow:0 0 30px #8a2be2; }
+  from { text-shadow: 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 25px #00aaff; }
 }
 
 .typing {
   font-size: 18px;
-  color:#d28cff;
+  color: #00ffcc;
 }
 
 .hire-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(45deg,#c266ff,#7b2cff);
+  background: linear-gradient(45deg, #00ffcc, #00aaff);
   color: black;
   padding: 12px 18px;
   border-radius: 30px;
@@ -478,11 +478,11 @@ nav button.active {
     object-fit:cover;
 
     border-radius:50%;
-    border:3px solid #c266ff;
+    border:3px solid cyan;
 
     margin-top:40px;
 
-    box-shadow:0 0 20px rgba(194,102,255,.6);
+    box-shadow:0 0 20px rgba(0,255,255,0.5);
 }
 #home .card:first-child{
     margin-top:20px;
@@ -498,8 +498,8 @@ nav button.active {
     display:block;
     margin:20px auto;
 
-    border:1px solid #bb66ff;
-    box-shadow:0 0 15px rgba(187,102,255,0.35);
+    border:1px solid #00ffcc;
+    box-shadow:0 0 15px rgba(0,255,204,0.3);
 
     transition:0.3s;
 }
@@ -806,35 +806,6 @@ Technologies Used: Flutter, Dart, ONNX Runtime, AI Models, Image Processing, Ges
 
 </div>
 
-    <a href="https://github.com/shivaraj-bmw/shadow-editor" target="_blank">
-  <button class="nextBtn">
-      🔗 View Source Code
-  </button>
-</a>
-
-
-<div class="card">
-
-<h3>📱 Try Shadow Editor</h3>
-
-<p>
-Download and test the latest APK build of SmartLayer AI Editor directly from GitHub Releases.
-</p>
-
-<a href="https://github.com/shivaraj-bmw/shadow-editor/releases/tag/v1.0"
-   target="_blank">
-
-<button class="nextBtn">
-📥 Download APK
-</button>
-
-</a>
-
-</div>
-
-  </div>
-
-  <!-- SRCE College Website -->
 <div class="card">
 
   <h3>🏫 SRCE College Website</h3>
@@ -850,14 +821,14 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
     <img src="screenshots/church-of-unity.png"
          alt="SRCE Website Home"
          onclick="openModal(this.src)">
-         
+
     <img src="screenshots/store-clg.png"
          alt="SRCE Website Home"
          onclick="openModal(this.src)">
-         
+
     <img src="screenshots/arch-clg.png"
          alt="SRCE Website Home"
-         onclick="openModal(this.src)">     
+         onclick="openModal(this.src)">
 
 </div>
 
@@ -894,6 +865,34 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
   </a>
 
 </div>
+
+    <a href="https://github.com/shivaraj-bmw/shadow-editor" target="_blank">
+  <button class="nextBtn">
+      🔗 View Source Code
+  </button>
+</a>
+
+
+<div class="card">
+
+<h3>📱 Try Shadow Editor</h3>
+
+<p>
+Download and test the latest APK build of SmartLayer AI Editor directly from GitHub Releases.
+</p>
+
+<a href="https://github.com/shivaraj-bmw/shadow-editor/releases/tag/v1.0"
+   target="_blank">
+
+<button class="nextBtn">
+📥 Download APK
+</button>
+
+</a>
+
+</div> 
+
+  </div>
 
   <!-- Number Guessing Game -->
   <div class="card">
@@ -1118,7 +1117,7 @@ for (let i = 0; i < 80; i++) {
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "rgba(194,102,255,0.6)";
+  ctx.fillStyle = "rgba(0,255,204,0.5)";
 
   particles.forEach(p => {
     ctx.beginPath();
