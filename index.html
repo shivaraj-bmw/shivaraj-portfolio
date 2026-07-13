@@ -210,14 +210,14 @@ a:hover{
 
 .cert-container .card {
   transform: scale(0.85);
-  opacity: 0.4;
-  filter: blur(1px);
+  opacity: 0.6;
+  filter: none;
 }
 
 .cert-container .card.active {
   transform: scale(1);
   opacity: 1;
-  filter: blur(0);
+  filter: none;
 }
 
 .cert-container .card.active {
@@ -812,23 +812,35 @@ Technologies Used: Flutter, Dart, ONNX Runtime, AI Models, Image Processing, Ges
 
   <h3>📸 Website Preview</h3>
 
-<div class="project-scroll">
+<div class="cert-wrapper">
 
-    <img src="screenshots/home-clg.png"
-         alt="SRCE Website Home"
-         onclick="openModal(this.src)">
+  <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
 
-    <img src="screenshots/church-of-unity.png"
-         alt="SRCE Website Home"
-         onclick="openModal(this.src)">
+  <div class="cert-container">
 
-    <img src="screenshots/store-clg.png"
-         alt="SRCE Website Home"
-         onclick="openModal(this.src)">
+    <div class="card">
+      <img src="screenshots/home-clg.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
 
-    <img src="screenshots/arch-clg.png"
-         alt="SRCE Website Home"
-         onclick="openModal(this.src)">
+    <div class="card">
+      <img src="screenshots/arch-clg.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/church-of-unity.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/store-clg.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+    
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">❯</button>
 
 </div>
 
