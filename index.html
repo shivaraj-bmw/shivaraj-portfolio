@@ -24,10 +24,10 @@ body::before {
     z-index: -2;
     pointer-events: none;
     background: radial-gradient(circle at center,
-        #451a1a 0%,
-        #1b0b25 35%,
-        #0f0404 70%,
-        #14021b 100%);
+        #200808 0%,
+        #090522 35%,
+        #250909 70%,
+        #17021f 100%);
 }
 /* ===== NAVBAR ===== */
 nav {
@@ -56,7 +56,7 @@ nav button {
 }
 
 nav button:hover {
-    background: rgba(225, 0, 255, 0.4);
+    background: rgba(226, 72, 72, 0.4);
     transform: scale(1.05);
 }
 
@@ -119,7 +119,7 @@ section.active {
   position: fixed;
   width: 300px;
   height: 300px;
-  background: rgba(0, 170, 255, 0.2);
+  background: rgba(195, 0, 255, 0.2);
   filter: blur(120px);
   top: 20%;
   left: 10%;
@@ -328,8 +328,8 @@ section.active {
 }
 
 nav button.active {
-  background: rgba(0,170,255,0.5);
-  box-shadow: 0 0 15px rgba(0,170,255,0.6);
+  background: rgba(54, 1, 12, 0.5);
+  box-shadow: 0 0 15px rgba(250, 98, 98, 0.6);
   transform: scale(1.05);
 }
 
@@ -388,7 +388,7 @@ nav button.active {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(45deg, #00ffcc, #00aaff);
+  background: linear-gradient(45deg, #00ffb3, #59046e);
   color: black;
   padding: 12px 18px;
   border-radius: 30px;
@@ -481,11 +481,11 @@ nav button.active {
     object-fit:cover;
 
     border-radius:50%;
-    border:3px solid cyan;
+    border:3px solid rgb(161, 174, 250);
 
     margin-top:40px;
 
-    box-shadow:0 0 20px rgba(0,255,255,0.5);
+    box-shadow:0 0 20px rgba(162, 0, 255, 0.5);
 }
 #home .card:first-child{
     margin-top:20px;
@@ -549,7 +549,7 @@ nav button.active {
 
 <div class="card">
 
-    <img src="Profile/ProfileImg.jpg"
+    <img src="Profile/ProfileImg.jpg"onclick="openModal(this.src)"
          alt="profile"
          class="profile-img">
 
@@ -861,7 +861,102 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
 
   <div class="card">
 
+  <h3>🌌 Shadow System</h3>
+
+  <p>
+   A website that is used for store our daily logs and imporove our learing performance. that is the inspired version of solo leveling system concept. you can add your skills and update your daily learning to surpase your skill. you can download your certificate in this website. and get experience to increase your skill level in E rank to Shadw Monarch level.
+  </p>
+
+  <ul>
+    <li>✅ Free logs</li>
+    <li>✅ Add Skills</li>
+    <li>✅ Google login</li>
+    <li>✅ Increase level</li>
+    <li>✅ Unlock Achivements</li>
+    <li>✅ Download Certificates</li>
+  </ul>
+
+  <h3>📸 Website Preview</h3>
+
+<div class="cert-wrapper">
+
+  <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+  <div class="cert-container">
+
+    <div class="card">
+      <img src="screenshots/System-1.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/System-2.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/System-3.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/System-4.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/System-5.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/System-6.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+    
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+
+</div>
+
+  <a href="https://shivaraj-bmw.github.io/Shadow-System/" target="_blank">
+    <button class="nextBtn">
+      🌐 Live Demo
+    </button>
+  </a>
+
+  <a href="https://github.com/shivaraj-bmw/Shadow-System" target="_blank">
+    <button class="nextBtn">
+      💻 Source Code
+    </button>
+  </a>
+
+</div>
+
+  <div class="card">
+
   <h3>🏫 SRCE College Website</h3>
+
+  <p>
+    A responsive college website developed using HTML and CSS as a beginner web development project.
+    The website provides information about Sardar Raja College of Engineering, including the home page,
+    engineering departments, campus facilities, and useful social media links with a clean and user-friendly interface.
+  </p>
+
+  <p>
+    <strong>Technologies Used:</strong><br>
+    HTML5 • CSS3
+  </p>
+
+  <ul>
+    <li>✅ Responsive Layout</li>
+    <li>✅ Home Page</li>
+    <li>✅ Department Navigation</li>
+    <li>✅ College Information</li>
+    <li>✅ Campus Facilities</li>
+    <li>✅ Social Media & Location Links</li>
+  </ul>
 
   <h3>📸 Website Preview</h3>
 
@@ -897,10 +992,26 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
 
 </div>
 
+  <a href="https://shivaraj-bmw.github.io/SRCE-Website/" target="_blank">
+    <button class="nextBtn">
+      🌐 Live Demo
+    </button>
+  </a>
+
+  <a href="https://github.com/shivaraj-bmw/SRCE-Website" target="_blank">
+    <button class="nextBtn">
+      💻 Source Code
+    </button>
+  </a>
+
+</div>
+
+<div class="card">
+
+  <h3>🌃 Shadow Translater</h3>
+
   <p>
-    A responsive college website developed using HTML and CSS as a beginner web development project.
-    The website provides information about Sardar Raja College of Engineering, including the home page,
-    engineering departments, campus facilities, and useful social media links with a clean and user-friendly interface.
+    A website that transfers any language into tamil works with pdf, documents, files or any thing like documents. anyway that needs an users API key so this is the sample project only so the viewers ony can see the website interface they want use that then needs an API key. still you want to use that website then you will paste your API key in the top right API button.
   </p>
 
   <p>
@@ -909,21 +1020,60 @@ Download and test the latest APK build of SmartLayer AI Editor directly from Git
   </p>
 
   <ul>
-    <li>✅ Responsive Layout</li>
-    <li>✅ Home Page</li>
-    <li>✅ Department Navigation</li>
-    <li>✅ College Information</li>
-    <li>✅ Campus Facilities</li>
-    <li>✅ Social Media & Location Links</li>
+    <li>✅ Translate Tamil to English</li>
+    <li>✅ Works with pdf</li>
+    <li>✅ Works with files</li>
+    <li>✅ Works with any documents</li>
+    <li>✅ Top right side have API button</li>
+    <li>⚠️ Need user's API key</li>
   </ul>
 
-  <a href="https://shivaraj-bmw.github.io/SRCE-Website/" target="_blank">
+  <h3>📸 Website Preview</h3>
+
+<div class="cert-wrapper">
+
+  <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+  <div class="cert-container">
+
+    <div class="card">
+      <img src="screenshots/Shadow translator-2.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/Shadow translator-1.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/Shadow translator-3.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/Shadow translator-6.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+
+    <div class="card">
+      <img src="screenshots/Shadow Translater-4.png" class="cert-img"
+           onclick="openModal(this.src)">
+    </div>
+    
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+
+</div>
+
+  <a href="https://shivaraj-bmw.github.io/Tamil-translator-/" target="_blank">
     <button class="nextBtn">
       🌐 Live Demo
     </button>
   </a>
 
-  <a href="https://github.com/shivaraj-bmw/SRCE-Website" target="_blank">
+  <a href="https://github.com/shivaraj-bmw/Tamil-translator-" target="_blank">
     <button class="nextBtn">
       💻 Source Code
     </button>
